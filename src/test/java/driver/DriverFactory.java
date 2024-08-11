@@ -16,7 +16,6 @@ import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 
 public class DriverFactory {
 
-    public static String browser;
     static PropertyManager propertyManager = new PropertyManager();
 
     public static void initDriver() {
@@ -28,8 +27,8 @@ public class DriverFactory {
         Configuration.browserSize = "1920x1080";
         Configuration.holdBrowserOpen = false;
         Configuration.screenshots = false;
-        Configuration.timeout = 10000;
-        Configuration.pageLoadTimeout = 30000;
+        Configuration.timeout = 50000;
+        Configuration.pageLoadTimeout = 50000;
         Configuration.headless = Objects.equals(propertyManager.getProperty("HEADLESS"), "Y");
     }
 

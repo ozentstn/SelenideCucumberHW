@@ -1,7 +1,6 @@
 package pages;
 
 import com.codeborne.selenide.Selenide;
-import com.codeborne.selenide.WebDriverRunner;
 import utils.PropertyManager;
 
 public abstract class BasePage {
@@ -16,9 +15,5 @@ public abstract class BasePage {
     public void open() {
         String url = propertyManager.getProperty("APP_URL") ;
         Selenide.open(url);
-    }
-
-    public String getUrl(){
-        return WebDriverRunner.getWebDriver().getCurrentUrl();
     }
 }

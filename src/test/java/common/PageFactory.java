@@ -5,10 +5,10 @@ import pages.WebTablePage;
 
 public class PageFactory {
     public static ElementsPage buildElementsPage() {
-        return new ElementsPage("/elements");
+        return new ElementsPage("/");
     }
 
     public static WebTablePage buildWebTablePage() {
-        return new WebTablePage("/webtables");
+        return new WebTablePage("/");
     }
 }

@@ -3,11 +3,12 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.testng.Assert;
-
 import static com.codeborne.selenide.Selenide.$;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class WebTablePage extends BasePage{
 
+    public SelenideElement webtables=$("li:nth-of-type(4)>.text");
     public SelenideElement addRecord=$("#addNewRecordButton");
     public SelenideElement submit=$("#submit");
     public SelenideElement depText=$(".rt-tr-group:nth-child(4) div:nth-of-type(6)");
@@ -24,12 +25,12 @@ public class WebTablePage extends BasePage{
         super(pageUrl);
     }
 
-    public void AddRecord(){
-        addRecord.click();
+    public void WebTables(){
+        webtables.click();
     }
 
     public void InputData(){
-        edit.click();
+        addRecord.click();
         //region[Veri girme]
         fName.click();
         fName.sendKeys("Özen");
@@ -54,11 +55,13 @@ public class WebTablePage extends BasePage{
     }
 
     public void Edit(){
+        edit.click();
         dep.click();
         dep.sendKeys("-Ökc");
+        submit.click();
         String showDep2Text=dep2Text.getText();
         String showDepText=depText.getText();
-        Assert.assertFalse(EqualsBuilder.reflectionEquals(showDepText,showDep2Text),"Veri değiştirildi");
+        Assert.assertEquals(showDepText,showDep2Text,"Veri değiştirilmedi");
     }
 }
 

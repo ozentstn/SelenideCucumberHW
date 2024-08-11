@@ -15,11 +15,9 @@ public class PropertyManager {
             props.load(new FileReader(new File(ClassLoader.getSystemResource("config.properties").getPath())));
             property = props;
         } catch (IOException ex) {
-            // handle error
             System.out.println("Properties file not found!");
         }
     }
-
 
     public String getProperty(String key) {
         Properties props = property;
