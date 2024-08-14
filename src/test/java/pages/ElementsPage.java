@@ -9,7 +9,7 @@ public class ElementsPage extends BasePage {
     public SelenideElement clickMe=$("div.col-md-6 div:nth-of-type(3) >button");
     public SelenideElement showMessage=$("#dynamicClickMessage");
 
-    public ElementsPage (String pageUrl){
+   public ElementsPage (String pageUrl){
         super(pageUrl);
     }
 

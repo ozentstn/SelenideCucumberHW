@@ -1,6 +1,5 @@
 package driver;
 
-import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
@@ -16,6 +15,7 @@ import static com.codeborne.selenide.WebDriverRunner.setWebDriver;
 
 public class DriverFactory {
 
+    public static String browser;
     static PropertyManager propertyManager = new PropertyManager();
 
     public static void initDriver() {
@@ -30,7 +30,10 @@ public class DriverFactory {
         Configuration.timeout = 50000;
         Configuration.pageLoadTimeout = 50000;
         Configuration.headless = Objects.equals(propertyManager.getProperty("HEADLESS"), "Y");
+
+        browser = Objects.equals(propertyManager.getProperty("BROWSER"), null) ? "chrome" : propertyManager.getProperty("BROWSER");
     }
+
 
     public static void initRemoteDriver() {
         String host = "http://localhost:4444/wd/hub";

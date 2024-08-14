@@ -1,10 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.testng.Assert;
 import static com.codeborne.selenide.Selenide.$;
-import static org.hamcrest.MatcherAssert.assertThat;
 
 public class WebTablePage extends BasePage{
 
