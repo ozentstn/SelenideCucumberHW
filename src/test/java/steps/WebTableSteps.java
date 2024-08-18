@@ -34,5 +34,4 @@ public class WebTableSteps extends BaseTest{
     public void editRecord(){
         pageManager.webTablePage.Edit();
     }
-
 }
